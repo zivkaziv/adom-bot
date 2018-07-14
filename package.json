@@ -1,0 +1,15 @@
+{
+  "name": "adombot",
+  "version": "0.0.1",
+  "description": "A simple bot that twits response",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "ZivKaZiv",
+  "license": "MIT",
+  "dependencies": {
+    "pikud-haoref-api": "^1.0.2",
+    "twit": "^2.2.5"
+  }
+}
