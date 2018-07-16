@@ -3,7 +3,7 @@
 const pikudHaoref = require('pikud-haoref-api');
 
 // Set polling interval in millis
-var interval = 65000;
+var interval = 5000;
 
 const twitMessager = require('./Twitter/twitter');
 const telegram = require('./Telegram/telegram');
@@ -25,7 +25,6 @@ let poll = () => {
         console.log('Currently active rocket alert zones:');
 
         // Log the alert zones (if any)
-        alertZones = ['123','1231'];
         console.log(alertZones);
         if(alertZones.length > 0){
             let text = generateText(alertZones);
