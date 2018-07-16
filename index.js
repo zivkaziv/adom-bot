@@ -3,9 +3,10 @@
 const pikudHaoref = require('pikud-haoref-api');
 
 // Set polling interval in millis
-var interval = 5000;
+var interval = 65000;
 
 const twitMessager = require('./Twitter/twitter');
+const telegram = require('./Telegram/telegram');
 
 // Define polling function
 let poll = () => {
@@ -24,28 +25,36 @@ let poll = () => {
         console.log('Currently active rocket alert zones:');
 
         // Log the alert zones (if any)
+        alertZones = ['123','1231'];
         console.log(alertZones);
         if(alertZones.length > 0){
-            createTweet(alertZones);
+            let text = generateText(alertZones);
+            // createTweet(text);
+            createTelegramMessage(text);
         }
         // Line break for readability
         console.log();
     });
 };
 
-let generateTweetText = (alertZones) =>{
+let generateText = (alertZones) =>{
     return alertZones.join(',');
 };
 
-let createTweet = (alertZones) =>{
-    let tweetText = '';
-    tweetText += generateTweetText(alertZones);
-
+let createTweet = (tweetText) =>{
     twitMessager.createAndPost(tweetText).then(function(){
         console.log('tweeting ' + tweetText);
     },function(err){
         console.log('Failed to replay tweet, Mark this user anyway...');
     });
+};
+
+let createTelegramMessage = (telegramText) =>{
+    telegram.sendMessage(telegramText).then( () => {
+        console.log('telegram  ' + telegramText);
+    }, (e) => {
+        console.log('Failed to send message on telegram ' + e);
+    })
 };
 
 poll();
