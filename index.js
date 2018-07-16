@@ -28,7 +28,7 @@ let poll = () => {
         console.log(alertZones);
         if(alertZones.length > 0){
             let text = generateText(alertZones);
-            // createTweet(text);
+            createTweet(text);
             createTelegramMessage(text);
         }
         // Line break for readability
