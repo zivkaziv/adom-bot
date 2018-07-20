@@ -30,7 +30,7 @@ let poll = () => {
             if(restarted){
                 restarted = false;
                 alertZones.push('Restarted');
-            }`
+            }
             let text = generateText(alertZones);
             createTweet(text);
             createTelegramMessage(text);
