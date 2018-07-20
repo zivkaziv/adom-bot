@@ -4,7 +4,7 @@ const pikudHaoref = require('pikud-haoref-api');
 
 // Set polling interval in millis
 var interval = 5000;
-
+var restarted = true;
 const twitMessager = require('./Twitter/twitter');
 const telegram = require('./Telegram/telegram');
 
@@ -26,7 +26,11 @@ let poll = () => {
 
         // Log the alert zones (if any)
         console.log(alertZones);
-        if(alertZones.length > 0){
+        if(alertZones.length > 0 || restarted){
+            if(restarted){
+                restarted = false;
+                alertZones.push('Restarted');
+            }`
             let text = generateText(alertZones);
             createTweet(text);
             createTelegramMessage(text);
