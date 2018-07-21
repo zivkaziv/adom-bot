@@ -32,7 +32,7 @@ let poll = () => {
                 alertZones.push('Restarted');
             }
             let text = generateText(alertZones);
-            createTweet(text);
+            //createTweet(text);
             createTelegramMessage(text);
         }
         // Line break for readability
@@ -41,7 +41,7 @@ let poll = () => {
 };
 
 let generateText = (alertZones) =>{
-    return alertZones.join(',');
+    return alertZones.join(' וגם ');
 };
 
 let createTweet = (tweetText) =>{
