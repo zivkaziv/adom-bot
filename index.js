@@ -29,7 +29,7 @@ let poll = () => {
         if(alertZones.length > 0 || restarted){
             if(restarted){
                 restarted = false;
-                alertZones.push('Restarted');
+                //alertZones.push('Restarted');
             }
             let text = generateText(alertZones);
             //createTweet(text);
