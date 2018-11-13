@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
-    "pikud-haoref-api": "^1.0.2",
+    "pikud-haoref-api": "^1.0.3",
     "twit": "^2.2.5"
   }
 }
