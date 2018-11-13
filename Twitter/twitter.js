@@ -7,7 +7,7 @@ const config = {
     access_token_secret: process.env.ACCESS_TOKEN_SECRET || ''
 };
 try {
-    let twit = new Twit(config);
+    let twit = {}//new Twit(config);
 }catch (e) {
 
 }
