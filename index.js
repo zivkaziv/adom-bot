@@ -20,7 +20,6 @@ let poll = () => {
         if (err) {
             return console.log('Retrieving active rocket alert zones failed: ', err);
         }
-
         // Alert zones header
         console.log('Currently active rocket alert zones:');
 
