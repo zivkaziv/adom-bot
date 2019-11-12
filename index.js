@@ -1,6 +1,6 @@
 'use strict';
 
-const pikudHaoref = require('pikud-haoref-api');
+// const pikudHaoref = require('pikud-haoref-api');
 
 // Set polling interval in millis
 var interval = 5000;
