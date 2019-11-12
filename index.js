@@ -8,7 +8,8 @@ var restarted = true;
 const twitMessager = require('./Twitter/twitter');
 const telegram = require('./Telegram/telegram');
 const axios = require('axios')
-
+const express = require('express');
+const app     = express();
 // Define polling function
 let poll = async() => {
     try{
@@ -85,7 +86,11 @@ let createTelegramMessage = (telegramText) =>{
     })
 };
 
-poll();
 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+    poll();
+});
 
 
