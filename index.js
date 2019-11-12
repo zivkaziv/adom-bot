@@ -3,7 +3,7 @@
 // const pikudHaoref = require('pikud-haoref-api');
 
 // Set polling interval in millis
-var interval = 5000;
+var interval = 10000;
 var restarted = true;
 const twitMessager = require('./Twitter/twitter');
 const telegram = require('./Telegram/telegram');
@@ -21,7 +21,7 @@ let poll = async() => {
         const data = JSON.parse(dataStr);
         if(data.alerts && data.alerts.items.length){
             //{"alerts": {"items": [{"item": {"guid": "b3419d33-c1c8-4009-a08c-fd58d9a30ea9","pubdate": "09:27","title": "מפלסים","description": "היכנסו למרחב המוגן","link": ""}},{"item": {"guid": "b3419d33-c1c8-4009-a08c-fd58d9a30ea9","pubdate": "09:27","title": "מטווח ניר עם","description": "היכנסו למרחב המוגן","link": ""}},{"item": {"guid": "978cd0b4-2e75-4358-8094-bada5662b588","pubdate": "09:26","title": "מבטחים עמיעוז ישע","description": "היכנסו למרחב המוגן","link": ""}},{"item": {"guid": "978cd0b4-2e75-4358-8094-bada5662b588","pubdate": "09:26","title": "צוחר ואוהד","description": "היכנסו למרחב המוגן","link": ""}}]}}
-            console.log(data.alerts)
+            // console.log(data.alerts)
             const alertZones = data.alerts.items.map(item => {
                 return item.item.title;
             })
@@ -65,7 +65,7 @@ let poll = async() => {
 };
 
 let generateText = (alertZones) =>{
-    return `צבע אדום ב
+    return `:צבע אדום ב
 ${alertZones.join(', ')}
 תעיפו את עצמכם למרחבים המוגנים...`;
 };
