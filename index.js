@@ -65,7 +65,7 @@ let poll = async() => {
 };
 
 let generateText = (alertZones) =>{
-    return `:צבע אדום ב
+    return `צבע אדום ב:
 ${alertZones.join(', ')}
 תעיפו את עצמכם למרחבים המוגנים...`;
 };
