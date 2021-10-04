@@ -13,7 +13,7 @@
     "jest": "27.2.4"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.2",
     "express": "^4.17.1",
     "twit": "^2.2.5"
   }
