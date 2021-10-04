@@ -48,20 +48,20 @@ let poll = async() => {
     //     // Alert zones header
     //     console.log('Currently active rocket alert zones:');
 
-    //     // Log the alert zones (if any)
-    //     console.log(alertZones);
-    //     if(alertZones.length > 0 || restarted){
-    //         if(restarted){
-    //             restarted = false;
-    //             //alertZones.push('Restarted');
-    //         }
-    //         let text = generateText(alertZones);
-    //         //createTweet(text);
-    //         createTelegramMessage(text);
-    //     }
-    //     // Line break for readability
-    //     console.log();
-    // });
+        // Log the alert zones (if any)
+        console.log(alertZones);
+        if(alertZones.length > 0 || restarted){
+            if(restarted){
+                restarted = false;
+                alertZones.push('Restarted');
+            }
+            let text = generateText(alertZones);
+            createTweet(text);
+            createTelegramMessage(text);
+        }
+        // Line break for readability
+        console.log();
+    });
 };
 
 let generateText = (alertZones) =>{

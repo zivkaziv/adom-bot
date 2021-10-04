@@ -4,10 +4,14 @@
   "description": "A simple bot that twits response",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "author": "ZivKaZiv",
   "license": "MIT",
+  "devDependencies": {
+    "jest": "27.2.4"
+  },
   "dependencies": {
     "axios": "^0.18.1",
     "express": "^4.17.1",
